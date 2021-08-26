@@ -3,11 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <meta name="viewport" content=" initial-scale=1.0">
     <title>Cricket Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="external.js"></script>
 </head>
 <body>
-    <h1>Cricket Match</h1>
-    
+    <h1 align="center">Cricket Match</h1>
+    <table align="center" border="1px" width="400px">
+        <thead>
+            <th>Squad A</th>
+            <th>Squad B</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td onclick="getNameA('Noor')">Noor</td>
+                <td onclick="getNameB('Wahab')">Wahab</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Tehseen')">Tehseen</td>
+                <td onclick="getNameB('Amir')">Amir</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Asif')">Asif</td>
+                <td onclick="getNameB('Mashood')">Mashood</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Huzaifa')">Huzaifa</td>
+                <td onclick="getNameB('Fakhar')">Fakhar</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Imran')">Imran</td>
+                <td onclick="getNameB('Shahid')">Shahid</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Ahsan')">Ahsan</td>
+                <td onclick="getNameB('Asad')">Asad</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Babar')">Babar</td>
+                <td onclick="getNameB('Talha')">Talha</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Maaz')">Maaz</td>
+                <td onclick="getNameB('Anus')">Anus</td>
+            </tr>
+            <tr>
+                <td onclick="getNameA('Umar')">Umar</td>
+                <td onclick="getNameB('Hamza')">Hamza</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+   <h3>Team A</h3>
+       <ul id="teamA"></ul>
+
+   <h3>Team B</h3>
+     <ul id="teamB"></ul>
+     
+     <div class="btn">
+         <button id="toss" onclick="toss()">TOSS</button>
+     </div>
+     <br>
+     <br>
+     <br>
+     <div id="bat-first">
+         <div class="button">
+             <button id="ball" onclick="result()">Ball</button>
+            </div>
+     </div>
 </body>
 </html>
