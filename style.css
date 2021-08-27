@@ -27,3 +27,15 @@ table tr td{
     border-radius: 50px;
     border: 2px solid black;
 }
+#wicket{
+    display: none;
+    text-align: center;
+}
+#wide{
+    display: none;
+    text-align: center;
+}
+#noball{
+    display: none; 
+    text-align: center;
+}
