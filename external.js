@@ -37,7 +37,7 @@ function getNameB(player) {
 let win;
 let x;
 function toss() {
-    // let x;
+
     let rand = Math.floor(Math.random() * 2) + 0;
     if (rand == 1) {
         let x = prompt("Team A won the toss and choose to:");
@@ -59,6 +59,7 @@ function toss() {
     display(win);
 
 }
+
 const innings = [
     {
         teamName: "",
@@ -66,22 +67,8 @@ const innings = [
         ball: 0,
         overs: 0,
         wickets: 0,
-        choice: "",
-        // scoreSeet: [
-        //     {
-        //         runs: 0,
-        //         isWicket: "",
-        //         isNoball: "",
-        //         isWideBall: ""
-        //     }
-        //     // {
-        //     //     runs: 3,
-        //     //     ballCount: 2,
-        //     //     isWicket: false,
-        //     //     isNoball: false,
-        //     //     isWideBall: false
-        //     // }
-        // ]
+        choice: ""
+
     },
     {
         teamName: "",
@@ -89,38 +76,24 @@ const innings = [
         ball: 0,
         overs: 0,
         wickets: 0,
-        choice: "",
-        // scoreSeet: [
-        //     {
-        //         runs: 0,
-        //         ballCount: 1,
-        //         isWicket: false,
-        //         isNoball: false,
-        //         isWideBall: false
-        //     }
-        //     // {
-        //     //     runs: 3,
-        //     //     ballCount: 2,
-        //     //     isWicket: false,
-        //     //     isNoball: false,
-        //     //     isWideBall: false
-        //     // }
-        // ]
+        choice: ""
+
     }
 ]
 
 let totalScore = [];
-let overs ;
+let overs;
+
 
 function result() {
-    let wd ;
-    let nb ;
+    let wd;
+    let nb;
     let runs = Math.floor(Math.random() * 6) + 1;
-    
-    innings[0].ball +=1
+
+    innings[0].ball += 1
     innings[0].overs += 0.1
     num = innings[0].overs.toFixed(1);
-    
+
 
     if (innings[0].ball == 6) {
         num = "1"
@@ -136,17 +109,17 @@ function result() {
 
     } else if (innings[0].ball == 9) {
         num = "1.2"
-    
+
     } else if (innings[0].ball == 10) {
         num = "1.2"
         nb += 1
 
     } else if (innings[0].ball == 11) {
         num = "1.3"
-    
+
     } else if (innings[0].ball == 12) {
         num = "1.4"
-  
+
     } else if (innings[0].ball == 13) {
         num = "1.5"
         innings[0].wickets += 1
@@ -155,30 +128,24 @@ function result() {
     } else if (innings[0].ball == 14) {
         num = "2"
     }
-    if(innings[0].ball == 14){
-        document.getElementById("ball").disabled = true;
-    }
+
 
     total = ({
         runs,
         overs
 
     })
-   
+
     totalScore = [...totalScore, total];
-    
+
     innings[0].totalRuns += runs;
 
+    innings.forEach(function (values) {
 
-    // totalScore.forEach(element => {
-    //     innings[0].totalRuns += element.runs;
-    //     // console.log(innings[0].totalRuns);
-    //     // console.log(element.runs);
+        console.log(values);
 
-    // });
+    });
 
-//    console.log(innings);
-   
     win = win.split(" ")[0]
     win = `${win}  ${innings[0].totalRuns} - ${innings[0].wickets}  Overs: ${num} `
     display(win);
@@ -224,7 +191,126 @@ function result() {
             targetThree.style.display = "none";
         }
     }
+
+
+    if (innings[0].ball == 14) {
+        document.getElementById("ball").disabled = true;
+    }
+
+
+
+
+
+    innings[1].ball += 1
+    innings[1].overs += 0.1
+    num = innings[1].overs.toFixed(1);
+
+
+
+    if (innings[1].ball == 6) {
+        num = "1"
+
+    } else if (innings[1].ball == 7) {
+        num = "1.1"
+        innings[1].wickets += 1
+        innings[1].totalRuns += -runs;
+
+    } else if (innings[1].ball == 8) {
+        num = "1.1"
+        wd += 1
+
+    } else if (innings[1].ball == 9) {
+        num = "1.2"
+
+    } else if (innings[1].ball == 10) {
+        num = "1.2"
+        nb += 1
+
+    } else if (innings[1].ball == 11) {
+        num = "1.3"
+
+    } else if (innings[1].ball == 12) {
+        num = "1.4"
+
+    } else if (innings[1].ball == 13) {
+        num = "1.5"
+        innings[1].wickets += 1
+        innings[1].totalRuns += -runs;
+
+    } else if (innings[1].ball == 14) {
+        num = "2"
+    }
+    if (innings[1].ball == 14) {
+        document.getElementById("ball").disabled = true;
+    }
+
+    total = ({
+        runs,
+        overs
+
+    })
+
+    totalScore = [...totalScore, total];
+
+    innings[1].totalRuns += runs;
+
+    innings.forEach(function (values) {
+
+        console.log(values);
+
+    });
+
+
+    win = win.split(" ")[0]
+    win = `${win}  ${innings[1].totalRuns} - ${innings[1].wickets}  Overs: ${num} `
+    display(win);
+
+
+    if (innings[1].ball == 7) {
+        document.getElementById("wicket").style.display = "block";
+    }
+    else {
+        setInterval(clear, 3000);
+        function clear() {
+            let targetOne = document.getElementById("wicket");
+            targetOne.style.display = "none";
+        }
+    }
+    if (innings[1].ball == 13) {
+        document.getElementById("wicket").style.display = "block";
+    }
+    else {
+        setInterval(clear, 3000);
+        function clear() {
+            let targetOne = document.getElementById("wicket");
+            targetOne.style.display = "none";
+        }
+    }
+    if (innings[1].ball == 8) {
+        document.getElementById("wide").style.display = "block";
+    }
+    else {
+        setInterval(clear, 6000);
+        function clear() {
+            let targetTwo = document.getElementById("wide");
+            targetTwo.style.display = "none";
+        }
+    }
+    if (innings[1].ball == 10) {
+        document.getElementById("noball").style.display = "block";
+    }
+    else {
+        setInterval(clear, 7000);
+        function clear() {
+            let targetThree = document.getElementById("noball");
+            targetThree.style.display = "none";
+        }
+    }
+
 }
+
+
+
 
 
 
@@ -235,6 +321,7 @@ const display = (value) => {
         a.removeChild(a.firstChild);
     }
     a.appendChild(b);
+
     document.getElementById("bat-first").appendChild(a);
 
     document.getElementById("toss").style.display = "none";
