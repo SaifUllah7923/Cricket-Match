@@ -55,9 +55,16 @@ function toss() {
             win = "TeamA  0-0"
 
     }
-    display(win);
+    let a = document.createElement("h4");
+    let b = document.createTextNode(win);
+    a.appendChild(b);
 
+    document.getElementById("bat-first").appendChild(a);
+
+    document.getElementById("toss").style.display = "none";
 }
+
+
 
 const innings = [
     {
@@ -79,3 +86,108 @@ const innings = [
 
     }
 ]
+    
+      
+    let overs;
+    let totalScore = []
+    let runs = Math.floor(Math.random() * 6) + 1;
+    
+    
+    innings[0].ball += 1
+    innings[0].overs += 0.1
+    num = innings[0].overs.toFixed(1);
+
+
+    if (innings[0].ball == 6) {
+        num = "1"
+
+    } else if (innings[0].ball == 7) {
+        num = "1.1"
+        innings[0].wickets += 1
+        innings[0].totalRuns += -runs;
+
+    } else if (innings[0].ball == 8) {
+        num = "1.1"
+        wd += 1
+
+    } else if (innings[0].ball == 9) {
+        num = "1.2"
+
+    } else if (innings[0].ball == 10) {
+        num = "1.2"
+        nb += 1
+
+    } else if (innings[0].ball == 11) {
+        num = "1.3"
+
+    } else if (innings[0].ball == 12) {
+        num = "1.4"
+
+    } else if (innings[0].ball == 13) {
+        num = "1.5"
+        innings[0].wickets += 1
+        innings[0].totalRuns += -runs;
+
+    } else if (innings[0].ball == 14) {
+        num = "2"
+    }
+    
+    innings[0].totalRuns += runs;
+     
+    total = ({
+        runs,
+        overs
+
+    })
+
+    totalScore = [...totalScore, total];
+
+
+
+    innings[1].ball += 1
+    innings[1].overs += 0.1
+    num = innings[1].overs.toFixed(1);
+
+
+
+    if (innings[1].ball == 6) {
+        num = "1"
+
+    } else if (innings[1].ball == 7) {
+        num = "1.1"
+        innings[1].wickets += 1
+        innings[1].totalRuns += -runs;
+
+    } else if (innings[1].ball == 8) {
+        num = "1.1"
+        wd += 1
+
+    } else if (innings[1].ball == 9) {
+        num = "1.2"
+
+    } else if (innings[1].ball == 10) {
+        num = "1.2"
+        nb += 1
+
+    } else if (innings[1].ball == 11) {
+        num = "1.3"
+
+    } else if (innings[1].ball == 12) {
+        num = "1.4"
+
+    } else if (innings[1].ball == 13) {
+        num = "1.5"
+        innings[1].wickets += 1
+        innings[1].totalRuns += -runs;
+
+    } else if (innings[1].ball == 14) {
+        num = "2"
+    }
+    innings[1].totalRuns+=runs;
+     
+    innings.forEach(values => {
+        console.log(values);
+    });
+   
+
+  
